@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Android," />
 
 
 
@@ -71,13 +71,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="MATRIX">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="ＲxJava引入 为啥要RxJava？ 提高代码的阅读性，减少切换线程数据通信的代码冗余并提高可控性． 这些我看不太明白啊，我不用Rxjava可不可以？ 恩，其实观察者模式就可以解决很多问题，比如这个打印机功能项目，里面没有用到rxjava，只用到了观察者模式，当收到广播的时候根据不同的广播执行不同的指令，项目地址：https://github.com/Samcasa/GPprinter，（如果不">
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="理解RxJava初探（一）">
+<meta property="og:url" content="http://yoursite.com/2017/06/03/rxjava1/index.html">
 <meta property="og:site_name" content="MATRIX">
+<meta property="og:description" content="ＲxJava引入 为啥要RxJava？ 提高代码的阅读性，减少切换线程数据通信的代码冗余并提高可控性． 这些我看不太明白啊，我不用Rxjava可不可以？ 恩，其实观察者模式就可以解决很多问题，比如这个打印机功能项目，里面没有用到rxjava，只用到了观察者模式，当收到广播的时候根据不同的广播执行不同的指令，项目地址：https://github.com/Samcasa/GPprinter，（如果不">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-09-30T09:21:03.908Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MATRIX">
+<meta name="twitter:title" content="理解RxJava初探（一）">
+<meta name="twitter:description" content="ＲxJava引入 为啥要RxJava？ 提高代码的阅读性，减少切换线程数据通信的代码冗余并提高可控性． 这些我看不太明白啊，我不用Rxjava可不可以？ 恩，其实观察者模式就可以解决很多问题，比如这个打印机功能项目，里面没有用到rxjava，只用到了观察者模式，当收到广播的时候根据不同的广播执行不同的指令，项目地址：https://github.com/Samcasa/GPprinter，（如果不">
 
 
 
@@ -107,13 +112,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/06/03/rxjava1/"/>
 
 
 
 
 
-  <title>MATRIX</title>
+  <title>理解RxJava初探（一） | MATRIX</title>
   
 
 
@@ -132,8 +137,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -236,162 +240,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/18/websocket/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="sam">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MATRIX">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/18/websocket/" itemprop="url">websocket长连接和stomp</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-18T00:00:00+08:00">
-                2017-06-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/网络基础/" itemprop="url" rel="index">
-                    <span itemprop="name">网络基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>websocket和http1.1都可以实现长连接，所谓长连接就是连接可以保持长时间，那他们有什么区别呢？</p>
-<p>了解他们的区别前，先看看http1.1和http1.0的区别．用这张图，我觉得时很合适的：</p>
-<p><img src="https://github.com/Samcasa/samcasa.github.io/blob/master/images/http1.0.png?raw=true" alt=""></p>
-<p>http1.0发起请求，建立连接，断开，再发起请求，建立连接，断开．http1.1发起请求，链接会保持一段时间，发起请求，找到已经存在的链接，再发起请求再去找这个链接．优势时很明显的，节约了很多资源．注意：</p>
-<ul>
-<li>http1.0客户端发起请求加上字段Connection：keep-alive，服务端收到后也会回复keep-alive字段，连接就会保持．http1.1默认keep-alive</li>
-</ul>
-<p>websocket和http长连接的区别<br><img src="https://github.com/Samcasa/samcasa.github.io/blob/master/images/websocket.png?raw=true" alt="websocket"></p>
-<p>只要keep-alive时间设置足够长，理论上就可以一直保持长连接，但是如图所示：http长连接的模式还是去服务器问的半双工轮旬模式，实时性不够，浪费资源，而webscoket一次建立，则开启全双工模式，一次建立，则实时数据传输．</p>
-<p>关于http,websocket和stomp<br><img src="https://github.com/Samcasa/samcasa.github.io/blob/master/images/stomp.png?raw=true" alt=""></p>
-<p>上图直观阐述了http和websocket都是基于ＴＣＰ开发，而xmpp和stomp时基于websocket开发的数据交换格式协议．</p>
-<p>stomp的队列订阅示意：<br><img src="https://github.com/Samcasa/samcasa.github.io/blob/master/images/line.png?raw=true" alt=""></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -421,9 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/03/rxjava1/" itemprop="url">理解RxJava初探（一）</a></h1>
+          <h1 class="post-title" itemprop="name headline">理解RxJava初探（一）</h1>
         
 
         <div class="post-meta">
@@ -495,9 +344,7 @@
       
 
       
-        
-          
-            <p><strong><em>ＲxJava引入</em></strong></p>
+        <p><strong><em>ＲxJava引入</em></strong></p>
 <p>为啥要RxJava？</p>
 <p>提高代码的阅读性，减少切换线程数据通信的代码冗余并提高可控性．</p>
 <p>这些我看不太明白啊，我不用Rxjava可不可以？</p>
@@ -515,8 +362,6 @@
 <p>目前认识到rxjava的重要性，接下来找些资料，作者写的很用心，看完这个基本没问题了：<br><a href="http://www.jianshu.com/p/464fa025229e" target="_blank" rel="external">http://www.jianshu.com/p/464fa025229e</a></p>
 <p>下一篇我会说一些RxJava的变形，方便更好的使用Rxjava</p>
 
-          
-        
       
     </div>
     
@@ -531,307 +376,40 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/03/rxjava2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="sam">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MATRIX">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/03/rxjava2/" itemprop="url">理解RxJava应用（二）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-03T00:00:00+08:00">
-                2017-06-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/RXJava系列/" itemprop="url" rel="index">
-                    <span itemprop="name">RXJava系列</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/Android/" rel="tag"># Android</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p><strong><em>RxJava应用</em></strong></p>
-<p>如果你看完上一篇里我推荐的RxJava九篇文章，相信你已经对RxJava完全不陌生并能开始运用了．我这里再说一些RxJava要注意的点<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/03/rxjava2/#more" rel="contents">
-              Read more &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/03/rxjava2/" rel="next" title="理解RxJava应用（二）">
+                <i class="fa fa-chevron-left"></i> 理解RxJava应用（二）
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/23/python_wsgi/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="sam">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MATRIX">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/23/python_wsgi/" itemprop="url">理解python WSGI--来看看python如何"接口回调"</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-23T00:00:00+08:00">
-                2017-05-23
-              </time>
+              <a href="/2017/06/18/websocket/" rel="prev" title="websocket长连接和stomp">
+                websocket长连接和stomp <i class="fa fa-chevron-right"></i>
+              </a>
             
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python初探/" itemprop="url" rel="index">
-                    <span itemprop="name">python初探</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>接口回调时java的一种说法，python是没有接口回调这个概念的，但是却可以巧妙的实现，而且实现的比java更省代码，先来说说Java的接口回调是怎么回事吧．<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/05/23/python_wsgi/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -841,10 +419,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -852,6 +431,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
