@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/about/index.html</loc>
+    
+    <lastmod>2017-09-30T09:38:26.715Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/06/03/rxjava1/</loc>
     
     <lastmod>2017-09-30T09:27:31.946Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>http://yoursite.com/2017/05/23/python_wsgi/</loc>
     
     <lastmod>2017-09-30T09:20:50.781Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/about/index.html</loc>
-    
-    <lastmod>2017-09-30T09:18:54.746Z</lastmod>
     
   </url>
   
