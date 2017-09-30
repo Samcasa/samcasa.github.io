@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/06/03/rxjava1/</loc>
+    
+    <lastmod>2017-09-30T09:27:31.946Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/06/18/websocket/</loc>
     
-    <lastmod>2017-09-30T09:21:08.936Z</lastmod>
+    <lastmod>2017-09-30T09:26:03.960Z</lastmod>
     
   </url>
   
@@ -12,13 +19,6 @@
     <loc>http://yoursite.com/2017/06/03/rxjava2/</loc>
     
     <lastmod>2017-09-30T09:21:06.244Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/06/03/rxjava1/</loc>
-    
-    <lastmod>2017-09-30T09:21:03.908Z</lastmod>
     
   </url>
   

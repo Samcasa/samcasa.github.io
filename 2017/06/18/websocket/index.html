@@ -71,22 +71,22 @@
 
 
 
-<meta name="description" content="websocket和http1.1都可以实现长连接，所谓长连接就是连接可以保持长时间，那他们有什么区别呢？ 了解他们的区别前，先看看http1.1和http1.0的区别．用这张图，我觉得时很合适的：  http1.0发起请求，建立连接，断开，再发起请求，建立连接，断开．http1.1发起请求，链接会保持一段时间，发起请求，找到已经存在的链接，再发起请求再去找这个链接．优势时很明显的，节约了很多资源">
+<meta name="description" content="websocket和http1.1都可以实现长连接，所谓长连接就是连接可以保持长时间，那他们有什么区别呢？">
 <meta name="keywords" content="http,websocket">
 <meta property="og:type" content="article">
 <meta property="og:title" content="websocket长连接和stomp">
 <meta property="og:url" content="http://yoursite.com/2017/06/18/websocket/index.html">
 <meta property="og:site_name" content="MATRIX">
-<meta property="og:description" content="websocket和http1.1都可以实现长连接，所谓长连接就是连接可以保持长时间，那他们有什么区别呢？ 了解他们的区别前，先看看http1.1和http1.0的区别．用这张图，我觉得时很合适的：  http1.0发起请求，建立连接，断开，再发起请求，建立连接，断开．http1.1发起请求，链接会保持一段时间，发起请求，找到已经存在的链接，再发起请求再去找这个链接．优势时很明显的，节约了很多资源">
+<meta property="og:description" content="websocket和http1.1都可以实现长连接，所谓长连接就是连接可以保持长时间，那他们有什么区别呢？">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://github.com/Samcasa/samcasa.github.io/blob/master/images/http1.0.png?raw=true">
 <meta property="og:image" content="https://github.com/Samcasa/samcasa.github.io/blob/master/images/websocket.png?raw=true">
 <meta property="og:image" content="https://github.com/Samcasa/samcasa.github.io/blob/master/images/stomp.png?raw=true">
 <meta property="og:image" content="https://github.com/Samcasa/samcasa.github.io/blob/master/images/line.png?raw=true">
-<meta property="og:updated_time" content="2017-09-30T09:21:08.936Z">
+<meta property="og:updated_time" content="2017-09-30T09:26:03.960Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="websocket长连接和stomp">
-<meta name="twitter:description" content="websocket和http1.1都可以实现长连接，所谓长连接就是连接可以保持长时间，那他们有什么区别呢？ 了解他们的区别前，先看看http1.1和http1.0的区别．用这张图，我觉得时很合适的：  http1.0发起请求，建立连接，断开，再发起请求，建立连接，断开．http1.1发起请求，链接会保持一段时间，发起请求，找到已经存在的链接，再发起请求再去找这个链接．优势时很明显的，节约了很多资源">
+<meta name="twitter:description" content="websocket和http1.1都可以实现长连接，所谓长连接就是连接可以保持长时间，那他们有什么区别呢？">
 <meta name="twitter:image" content="https://github.com/Samcasa/samcasa.github.io/blob/master/images/http1.0.png?raw=true">
 
 
@@ -349,8 +349,7 @@
       
 
       
-        <p>websocket和http1.1都可以实现长连接，所谓长连接就是连接可以保持长时间，那他们有什么区别呢？</p>
-<p>了解他们的区别前，先看看http1.1和http1.0的区别．用这张图，我觉得时很合适的：</p>
+        <p>websocket和http1.1都可以实现长连接，所谓长连接就是连接可以保持长时间，那他们有什么区别呢？<br><a id="more"></a><br>了解他们的区别前，先看看http1.1和http1.0的区别．用这张图，我觉得时很合适的：</p>
 <p><img src="https://github.com/Samcasa/samcasa.github.io/blob/master/images/http1.0.png?raw=true" alt=""></p>
 <p>http1.0发起请求，建立连接，断开，再发起请求，建立连接，断开．http1.1发起请求，链接会保持一段时间，发起请求，找到已经存在的链接，再发起请求再去找这个链接．优势时很明显的，节约了很多资源．注意：</p>
 <ul>
