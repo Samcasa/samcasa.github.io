@@ -1938,7 +1938,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #5b9eff;
+  background: #fffff1;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3020,9 +3020,6 @@ hr {
     width: auto;
     text-align: center;
   }
-}
-body {
-  background: url("https://github.com/Samcasa/samcasa.github.io/blob/master/images/bg.jpg?raw=true");
 }
 .post {
   margin-top: 0px;
