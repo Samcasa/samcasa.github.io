@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android," />
+  <meta name="keywords" content="Mysql," />
 
 
 
@@ -71,18 +71,32 @@
 
 
 
-<meta name="description" content="RxJava应用 如果你看完上一篇里我推荐的RxJava九篇文章，相信你已经对RxJava完全不陌生并能开始运用了．我这里再说一些RxJava要注意的点">
-<meta name="keywords" content="Android">
+<meta name="description" content="mysql是一种关系型数据库，现在流行的服务器缓存策略是先访问一次非关系型数据库比如MongoDB,有现成的数据则直接json返回，没有的话再去关系型数据库查一下，现在记录一下mysql用到的命令，环境是ubuntu16.04LTS.">
+<meta name="keywords" content="Mysql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="理解RxJava应用（二）">
-<meta property="og:url" content="http://yoursite.com/2017/06/03/rxjava2/index.html">
+<meta property="og:title" content="mysql学习篇--记录一些命令">
+<meta property="og:url" content="http://yoursite.com/2017/09/16/mysql20179/index.html">
 <meta property="og:site_name" content="MATRIX">
-<meta property="og:description" content="RxJava应用 如果你看完上一篇里我推荐的RxJava九篇文章，相信你已经对RxJava完全不陌生并能开始运用了．我这里再说一些RxJava要注意的点">
+<meta property="og:description" content="mysql是一种关系型数据库，现在流行的服务器缓存策略是先访问一次非关系型数据库比如MongoDB,有现成的数据则直接json返回，没有的话再去关系型数据库查一下，现在记录一下mysql用到的命令，环境是ubuntu16.04LTS.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-09-30T09:21:06.244Z">
+<meta property="og:image" content="http://img.blog.csdn.net/20170914153655406?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2FtY2FzYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="http://img.blog.csdn.net/20170914154024052?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2FtY2FzYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="http://img.blog.csdn.net/20170914155641611?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2FtY2FzYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="http://img.blog.csdn.net/20170914155847663?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2FtY2FzYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="http://img.blog.csdn.net/20170914160935654?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2FtY2FzYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="http://img.blog.csdn.net/20170914161016761?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2FtY2FzYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="http://img.blog.csdn.net/20170914162426053?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2FtY2FzYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="http://img.blog.csdn.net/20170914163438489?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2FtY2FzYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="http://img.blog.csdn.net/20170915115601766?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2FtY2FzYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="http://img.blog.csdn.net/20170915131148792?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2FtY2FzYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="http://img.blog.csdn.net/20170915131734827?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="http://img.blog.csdn.net/20170915133837633?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2FtY2FzYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="http://img.blog.csdn.net/20170915134043513?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2FtY2FzYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:updated_time" content="2017-10-08T14:21:38.799Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="理解RxJava应用（二）">
-<meta name="twitter:description" content="RxJava应用 如果你看完上一篇里我推荐的RxJava九篇文章，相信你已经对RxJava完全不陌生并能开始运用了．我这里再说一些RxJava要注意的点">
+<meta name="twitter:title" content="mysql学习篇--记录一些命令">
+<meta name="twitter:description" content="mysql是一种关系型数据库，现在流行的服务器缓存策略是先访问一次非关系型数据库比如MongoDB,有现成的数据则直接json返回，没有的话再去关系型数据库查一下，现在记录一下mysql用到的命令，环境是ubuntu16.04LTS.">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20170914153655406?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2FtY2FzYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
 
 
 
@@ -112,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/06/03/rxjava2/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/16/mysql20179/"/>
 
 
 
 
 
-  <title>理解RxJava应用（二） | MATRIX</title>
+  <title>mysql学习篇--记录一些命令 | MATRIX</title>
   
 
 
@@ -265,7 +279,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/03/rxjava2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/16/mysql20179/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sam">
@@ -282,7 +296,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">理解RxJava应用（二）</h2>
+          <h2 class="post-title" itemprop="name headline">mysql学习篇--记录一些命令</h2>
         
 
         <div class="post-meta">
@@ -294,8 +308,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-03T00:00:00+08:00">
-                2017-06-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-16T00:00:00+08:00">
+                2017-09-16
               </time>
             
 
@@ -317,8 +331,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/RXJava系列/" itemprop="url" rel="index">
-                    <span itemprop="name">RXJava系列</span>
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
                   </a>
                 </span>
 
@@ -336,8 +350,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/06/03/rxjava2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2017/06/03/rxjava2/" itemprop="commentsCount"></span>
+                <a href="/2017/09/16/mysql20179/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/09/16/mysql20179/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -346,7 +360,7 @@
 
           
           
-             <span id="/2017/06/03/rxjava2/" class="leancloud_visitors" data-flag-title="理解RxJava应用（二）">
+             <span id="/2017/09/16/mysql20179/" class="leancloud_visitors" data-flag-title="mysql学习篇--记录一些命令">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -377,16 +391,122 @@
       
 
       
-        <p><strong><em>RxJava应用</em></strong></p>
-<p>如果你看完上一篇里我推荐的RxJava九篇文章，相信你已经对RxJava完全不陌生并能开始运用了．我这里再说一些RxJava要注意的点<br><a id="more"></a><br>１．RxJava2.0中Observerable和Flowable的区别，先上代码：</p>
-<p>Flowable:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">Flowable.create(<span class="keyword">new</span> FlowableOnSubscribe&lt;Integer&gt;() &#123;</div><div class="line">   <span class="meta">@Override</span></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">subscribe</span><span class="params">(FlowableEmitter&lt;Integer&gt; e)</span></span></div><div class="line"><span class="function">           <span class="keyword">throws</span> Exception</span></div><div class="line"><span class="function">   </span>&#123;</div><div class="line">       Log.d(<span class="string">"rxman"</span>,e.requested()+<span class="string">""</span>);</div><div class="line">       e.onNext(<span class="number">0</span>);</div><div class="line">   &#125;</div><div class="line">&#125;, BackpressureStrategy.BUFFER).subscribeOn(Schedulers.io()).</div><div class="line">               observeOn(AndroidSchedulers.mainThread()).</div><div class="line">       subscribe(<span class="keyword">new</span> Subscriber&lt;Integer&gt;() &#123;</div><div class="line">           <span class="meta">@Override</span></div><div class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSubscribe</span><span class="params">(Subscription s)</span> </span>&#123;</div><div class="line">               Log.d(<span class="string">"rxman"</span>, <span class="string">"onSubscribe"</span>);</div><div class="line">               s.request(<span class="number">1</span>);</div><div class="line">           &#125;</div><div class="line">           <span class="meta">@Override</span></div><div class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onNext</span><span class="params">(Integer integer)</span> </span>&#123;</div><div class="line">               Log.d(<span class="string">"rxman"</span>, <span class="string">"onnext"</span>+integer);</div><div class="line">           &#125;</div><div class="line">           <span class="meta">@Override</span></div><div class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onError</span><span class="params">(Throwable t)</span> </span>&#123;</div><div class="line">           &#125;</div><div class="line">           <span class="meta">@Override</span></div><div class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onComplete</span><span class="params">()</span> </span>&#123;</div><div class="line">               Log.d(<span class="string">"rxman"</span>, <span class="string">"oncomplete"</span>);</div><div class="line">           &#125;</div><div class="line">       &#125;);</div></pre></td></tr></table></figure></p>
-<p>Observerable:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">Observable.create(<span class="keyword">new</span> ObservableOnSubscribe&lt;Integer&gt;() &#123;</div><div class="line">      <span class="meta">@Override</span></div><div class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">subscribe</span><span class="params">(ObservableEmitter&lt;Integer&gt; e)</span></span></div><div class="line"><span class="function">              <span class="keyword">throws</span> Exception</span></div><div class="line"><span class="function">      </span>&#123;</div><div class="line">            e.onNext(<span class="number">0</span>);</div><div class="line">      &#125;</div><div class="line">  &#125;).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(<span class="keyword">new</span> Observer&lt;Integer&gt;() &#123;</div><div class="line">      <span class="meta">@Override</span></div><div class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSubscribe</span><span class="params">(Disposable d)</span> </span>&#123;</div><div class="line">          Log.d(<span class="string">"rxman"</span>, <span class="string">"onSubscribe"</span>);</div><div class="line">      &#125;</div><div class="line">      <span class="meta">@Override</span></div><div class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onNext</span><span class="params">(Integer value)</span> </span>&#123;</div><div class="line">          Log.d(<span class="string">"rxman"</span>, <span class="string">"onnext"</span>+value);</div><div class="line">      &#125;</div><div class="line">      <span class="meta">@Override</span></div><div class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onError</span><span class="params">(Throwable e)</span> </span>&#123;</div><div class="line">      &#125;</div><div class="line">      <span class="meta">@Override</span></div><div class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onComplete</span><span class="params">()</span> </span>&#123;</div><div class="line">      &#125;</div><div class="line">  &#125;);</div></pre></td></tr></table></figure></p>
-<p>Flowable和Observerable 相比，不同的一个就是Ｆlowable是拉取式的，只有onSubscribe里面写了你要多少个，他才会给你发多少个s.request(1);，结合BackpressureStrategy.BUFFER,BackpressureStrategy.LATEST,BackpressureStrategy.DROP,对发送消息阶段实现了处理．</p>
-<p>但是也不是绝对的，比如这样：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">Flowable.create(<span class="keyword">new</span> FlowableOnSubscribe&lt;Integer&gt;() &#123;</div><div class="line">           <span class="meta">@Override</span></div><div class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">subscribe</span><span class="params">(FlowableEmitter&lt;Integer&gt; e)</span></span></div><div class="line"><span class="function">                   <span class="keyword">throws</span> Exception</span></div><div class="line"><span class="function">           </span>&#123;</div><div class="line">               Log.d(<span class="string">"rxman"</span>,e.requested()+<span class="string">""</span>);</div><div class="line">               e.onNext(<span class="number">0</span>);</div><div class="line">           &#125;</div><div class="line">       &#125;, BackpressureStrategy.BUFFER).subscribeOn(Schedulers.io()).</div><div class="line">                       observeOn(AndroidSchedulers.mainThread()).</div><div class="line">                       subscribe(<span class="keyword">new</span> Consumer&lt;Integer&gt;() &#123;</div><div class="line">                           <span class="meta">@Override</span></div><div class="line">                           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">accept</span><span class="params">(Integer integer)</span></span></div><div class="line"><span class="function">                                   <span class="keyword">throws</span> Exception</span></div><div class="line"><span class="function">                           </span>&#123;</div><div class="line">                               Log.d(<span class="string">"rxman"</span>,integer+<span class="string">""</span>);</div><div class="line">                           &#125;</div><div class="line">                       &#125;);</div></pre></td></tr></table></figure></p>
-<p>subscribe实现的是new Consumer(),并咩有request(),但是照样发消息，查看文档就会发现其实这个方法默认实现了request(Integer.MAX_VALUE).</p>
-<p>再变换一下呢？<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Flowable.&lt;Integer&gt;create(e-&gt; e.onNext(<span class="number">0</span>),BackpressureStrategy.BUFFER).subscribeOn(Schedulers.io())</div><div class="line">              .observeOn(AndroidSchedulers.mainThread()).subscribe(integer -&gt; Log.d(<span class="string">"rxman"</span>,integer+<span class="string">""</span>));</div></pre></td></tr></table></figure></p>
-<p>用上Lambda之后，代码更简洁，但是可读性也变差了．这是展示Ｌambda变换流程，只是方便大家取看别人的代码，万一别人这样缩进，你也明白为啥．</p>
-<p>下一篇将讲讲RxJava在项目中的运用．</p>
+        <p>mysql是一种关系型数据库，现在流行的服务器缓存策略是先访问一次非关系型数据库比如MongoDB,有现成的数据则直接json返回，没有的话再去关系型数据库查一下，现在记录一下mysql用到的命令，环境是ubuntu16.04LTS.<br><a id="more"></a><br><strong>第一部分：安装篇</strong></p>
+<p>1.mysql安装</p>
+<blockquote>
+<p>sudo apt-get install mysql-server mysql-client</p>
+</blockquote>
+<p>根据提示输入密码和确认密码</p>
+<p>2.检验安装是否成功，成功则显示mysql的版本号</p>
+<blockquote>
+<p>mysql –version</p>
+<p>service mysql start //启动服务</p>
+<p>service mysql stop //停止服务</p>
+<p>service mysql restart //服务重启</p>
+</blockquote>
+<p>3.允许远程链接数据库</p>
+<blockquote>
+<p>cd  /etc/mysql/mysql.conf.d</p>
+<p>sudo gedit mysqld.cnf</p>
+</blockquote>
+<p>将bind-address=127.0.0.1 注释后，登录mysql,执行</p>
+<blockquote>
+<p>mysql -uroot -p　//登录mysql,输入密码</p>
+<p>mysql&gt; grant all privileges on <em>.</em> to ‘root’@’%’ identified by ‘mysql’ with grant option;</p>
+<p>mysql&gt; flush privileges</p>
+<p>service mysql restart</p>
+</blockquote>
+<p>4.现在试一下，找一个win主机或打开虚拟机，下载navicat,地址：<a href="https://pan.baidu.com/s/1pLuSoJ5" target="_blank" rel="external">https://pan.baidu.com/s/1pLuSoJ5</a><br>打开后输入ubuntu 的ip地址，mysql数据库用户名和密码．远程连接成功后即可看到在你电脑上的数据库.</p>
+<p><strong>第二部分：基础命令入门篇</strong></p>
+<p>1.数据库登陆，退出</p>
+<blockquote>
+<p>mysql -uroot -p　 //登录数据库</p>
+<p>quit(exit) 　//退出</p>
+</blockquote>
+<p>2.创建一个数据库并展示</p>
+<blockquote>
+<p>create database NewTab charset=utf8;</p>
+<p>show databases;<br><img src="http://img.blog.csdn.net/20170914153655406?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2FtY2FzYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
+</blockquote>
+<p>3.使用一个数据库并查看和创建一张表</p>
+<blockquote>
+<p>mysql&gt; use NewTab;</p>
+<p>mysql&gt; show tables；</p>
+<p>mysql&gt; create table students(id int auto_increment primary key not null,name varchar(10) not null,gendar varchar(1) not null,isDelete varchar(1) not null);</p>
+</blockquote>
+<p><img src="http://img.blog.csdn.net/20170914154024052?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2FtY2FzYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
+<p>4.插入数据并更新</p>
+<blockquote>
+<p>mysql&gt; insert into students (id,name,gendar,isDelete) values(‘0’,’jim’,1,0),(‘0’,’ken’,2,1);</p>
+<p>mysql&gt; update students set gendar=1 where isDelete==1;</p>
+</blockquote>
+<p><img src="http://img.blog.csdn.net/20170914155641611?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2FtY2FzYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
+<p>5.逻辑删除</p>
+<blockquote>
+<p>mysql&gt; select * from students where isDelete=0;</p>
+</blockquote>
+<p><img src="http://img.blog.csdn.net/20170914155847663?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2FtY2FzYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
+<p>6.条件查询</p>
+<blockquote>
+<p>mysql&gt; select * from students where id&gt;2 and gendar=1 or name=’lily’;</p>
+</blockquote>
+<p><img src="http://img.blog.csdn.net/20170914160935654?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2FtY2FzYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
+<p>7.模糊查询</p>
+<blockquote>
+<p>mysql&gt; select * from students where name like ‘j%’;</p>
+</blockquote>
+<p><img src="http://img.blog.csdn.net/20170914161016761?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2FtY2FzYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
+<p>8.分组查询</p>
+<blockquote>
+<p>mysql&gt; select gendar as sex,count(*) from students group by gendar having gendar=1;</p>
+</blockquote>
+<p><img src="http://img.blog.csdn.net/20170914162426053?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2FtY2FzYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
+<p>where是对from后面指定的表进行数据筛选，属于对原始数据的筛选</p>
+<p>having是对group by的结果进行筛选</p>
+<p>9.排序查询</p>
+<blockquote>
+<p>mysql&gt; select * from students order by isDelete asc;</p>
+<p>mysql&gt; select * from students order by isDelete desc;</p>
+</blockquote>
+<p><img src="http://img.blog.csdn.net/20170914163438489?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2FtY2FzYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
+<p>10.复合查询</p>
+<blockquote>
+<p>mysql&gt; select gendar,name from students where id&gt;1 group by gendar,name having gendar=1 order by gendar desc limit 1,2;</p>
+</blockquote>
+<p><strong>第三部分：提高篇</strong></p>
+<p>有三个表结构如下：</p>
+<p><img src="http://img.blog.csdn.net/20170915115601766?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2FtY2FzYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
+<p>1.查询姓名，学科，分数,连接查询</p>
+<blockquote>
+<p>mysql&gt; select students.name,subjects.subject,scores.score from scores inner join students on students.id=scores.sname  inner join subjects on subjects.sid=scores.ssub;</p>
+</blockquote>
+<p><img src="http://img.blog.csdn.net/20170915131148792?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2FtY2FzYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
+<p>2.查询每个学生的平均分，总分</p>
+<blockquote>
+<p>mysql&gt; select students.name,avg(scores.score) from scores inner join students on students.id=scores.sname group by students.name;</p>
+</blockquote>
+<p>3.查询单个科目最高分和最低分</p>
+<blockquote>
+<p>mysql&gt; select subjects.subject as subject,max(scores.score),min(scores.score) from scores inner  join subjects on subjects.sid=scores.ssub group by subjects.subject;</p>
+</blockquote>
+<p><img src="http://img.blog.csdn.net/20170915131734827?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
+<p>4.创建一个视图</p>
+<blockquote>
+<p>mysql&gt; create view stu_sub_sco as select students.*,scores.score,subjects.subject from scores inner join students on students.id=scores.sname inner join subjects on subjects.sid=scores.ssub;</p>
+</blockquote>
+<p><img src="http://img.blog.csdn.net/20170915133837633?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2FtY2FzYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
+<p>5.修改一个视图</p>
+<blockquote>
+<p>mysql&gt; alter view stu_sub_sco as select students.*,scores.score,subjects.subject from scores inner join students on students.id=scores.sname inner join subjects on subjects.sid=scores.ssub where isDelete=0;</p>
+</blockquote>
+<p><img src="http://img.blog.csdn.net/20170915134043513?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2FtY2FzYQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
+<p>6.创建外键</p>
+<blockquote>
+<p>mysql&gt; create table infoscores( id int primary key auto_increment not null, studentid int, subjectid int, score int not null, foreign key(studentid) references students(id),foreign key(subjectid) references subjects(id));</p>
+</blockquote>
+<p>创建外键有两点：</p>
+<p>1.数据库引擎必须一致．</p>
+<p>2.引用主键且类型长度一致．</p>
 
       
     </div>
@@ -433,7 +553,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag"># Android</a>
+            <a href="/tags/Mysql/" rel="tag"># Mysql</a>
           
         </div>
       
@@ -446,8 +566,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/23/python_wsgi/" rel="next" title="理解python WSGI--来看看python如何"接口回调"">
-                <i class="fa fa-chevron-left"></i> 理解python WSGI--来看看python如何"接口回调"
+              <a href="/2017/08/03/leshi/" rel="next" title="乐视手机报出Erro:cameraFramwork 100错误">
+                <i class="fa fa-chevron-left"></i> 乐视手机报出Erro:cameraFramwork 100错误
               </a>
             
           </div>
@@ -455,10 +575,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/03/rxjava1/" rel="prev" title="理解RxJava初探（一）">
-                理解RxJava初探（一） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -728,7 +844,7 @@
 		_hcwp.push({widget:"Bloggerstream", widget_id: 95964, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 95964, xid: "2017/06/03/rxjava2/"});
+		_hcwp.push({widget:"Stream", widget_id: 95964, xid: "2017/09/16/mysql20179/"});
 		
 
 		(function() {
