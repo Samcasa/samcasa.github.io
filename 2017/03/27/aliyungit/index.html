@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android," />
+  <meta name="keywords" content="Git,Linux," />
 
 
 
@@ -71,18 +71,18 @@
 
 
 
-<meta name="description" content="RxJava应用 如果你看完上一篇里我推荐的RxJava九篇文章，相信你已经对RxJava完全不陌生并能开始运用了．我这里再说一些RxJava要注意的点">
-<meta name="keywords" content="Android">
+<meta name="description" content="搭建一个Git服务器还是比较简单的，主要是记录下踩到的坑．步骤： 1.远程登录服务器,ssh前面加sudo 直接登录服务器上面的root账号．  sudo ssh ip  2.新建一个用户,这里有个小坑，命令记乱了容易踩  sudo useradd git    //新建了用户git，但是不会在/home下面建立一个文件夹gitsudo adduser git  //新建了用户git并在/home">
+<meta name="keywords" content="Git,Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="理解RxJava应用（二）">
-<meta property="og:url" content="http://yoursite.com/2017/06/03/rxjava2/index.html">
+<meta property="og:title" content="阿里云上搭建git服务器">
+<meta property="og:url" content="http://yoursite.com/2017/03/27/aliyungit/index.html">
 <meta property="og:site_name" content="MATRIX">
-<meta property="og:description" content="RxJava应用 如果你看完上一篇里我推荐的RxJava九篇文章，相信你已经对RxJava完全不陌生并能开始运用了．我这里再说一些RxJava要注意的点">
+<meta property="og:description" content="搭建一个Git服务器还是比较简单的，主要是记录下踩到的坑．步骤： 1.远程登录服务器,ssh前面加sudo 直接登录服务器上面的root账号．  sudo ssh ip  2.新建一个用户,这里有个小坑，命令记乱了容易踩  sudo useradd git    //新建了用户git，但是不会在/home下面建立一个文件夹gitsudo adduser git  //新建了用户git并在/home">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-09-30T09:21:06.244Z">
+<meta property="og:updated_time" content="2017-10-08T13:26:42.636Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="理解RxJava应用（二）">
-<meta name="twitter:description" content="RxJava应用 如果你看完上一篇里我推荐的RxJava九篇文章，相信你已经对RxJava完全不陌生并能开始运用了．我这里再说一些RxJava要注意的点">
+<meta name="twitter:title" content="阿里云上搭建git服务器">
+<meta name="twitter:description" content="搭建一个Git服务器还是比较简单的，主要是记录下踩到的坑．步骤： 1.远程登录服务器,ssh前面加sudo 直接登录服务器上面的root账号．  sudo ssh ip  2.新建一个用户,这里有个小坑，命令记乱了容易踩  sudo useradd git    //新建了用户git，但是不会在/home下面建立一个文件夹gitsudo adduser git  //新建了用户git并在/home">
 
 
 
@@ -112,13 +112,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/06/03/rxjava2/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/27/aliyungit/"/>
 
 
 
 
 
-  <title>理解RxJava应用（二） | MATRIX</title>
+  <title>阿里云上搭建git服务器 | MATRIX</title>
   
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/03/rxjava2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/27/aliyungit/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sam">
@@ -282,7 +282,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">理解RxJava应用（二）</h2>
+          <h2 class="post-title" itemprop="name headline">阿里云上搭建git服务器</h2>
         
 
         <div class="post-meta">
@@ -294,8 +294,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-03T00:00:00+08:00">
-                2017-06-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-27T00:00:00+08:00">
+                2017-03-27
               </time>
             
 
@@ -317,8 +317,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/RXJava系列/" itemprop="url" rel="index">
-                    <span itemprop="name">RXJava系列</span>
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
                   </a>
                 </span>
 
@@ -336,8 +336,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/06/03/rxjava2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2017/06/03/rxjava2/" itemprop="commentsCount"></span>
+                <a href="/2017/03/27/aliyungit/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/03/27/aliyungit/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -346,7 +346,7 @@
 
           
           
-             <span id="/2017/06/03/rxjava2/" class="leancloud_visitors" data-flag-title="理解RxJava应用（二）">
+             <span id="/2017/03/27/aliyungit/" class="leancloud_visitors" data-flag-title="阿里云上搭建git服务器">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -377,16 +377,47 @@
       
 
       
-        <p><strong><em>RxJava应用</em></strong></p>
-<p>如果你看完上一篇里我推荐的RxJava九篇文章，相信你已经对RxJava完全不陌生并能开始运用了．我这里再说一些RxJava要注意的点<br><a id="more"></a><br>１．RxJava2.0中Observerable和Flowable的区别，先上代码：</p>
-<p>Flowable:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">Flowable.create(<span class="keyword">new</span> FlowableOnSubscribe&lt;Integer&gt;() &#123;</div><div class="line">   <span class="meta">@Override</span></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">subscribe</span><span class="params">(FlowableEmitter&lt;Integer&gt; e)</span></span></div><div class="line"><span class="function">           <span class="keyword">throws</span> Exception</span></div><div class="line"><span class="function">   </span>&#123;</div><div class="line">       Log.d(<span class="string">"rxman"</span>,e.requested()+<span class="string">""</span>);</div><div class="line">       e.onNext(<span class="number">0</span>);</div><div class="line">   &#125;</div><div class="line">&#125;, BackpressureStrategy.BUFFER).subscribeOn(Schedulers.io()).</div><div class="line">               observeOn(AndroidSchedulers.mainThread()).</div><div class="line">       subscribe(<span class="keyword">new</span> Subscriber&lt;Integer&gt;() &#123;</div><div class="line">           <span class="meta">@Override</span></div><div class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSubscribe</span><span class="params">(Subscription s)</span> </span>&#123;</div><div class="line">               Log.d(<span class="string">"rxman"</span>, <span class="string">"onSubscribe"</span>);</div><div class="line">               s.request(<span class="number">1</span>);</div><div class="line">           &#125;</div><div class="line">           <span class="meta">@Override</span></div><div class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onNext</span><span class="params">(Integer integer)</span> </span>&#123;</div><div class="line">               Log.d(<span class="string">"rxman"</span>, <span class="string">"onnext"</span>+integer);</div><div class="line">           &#125;</div><div class="line">           <span class="meta">@Override</span></div><div class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onError</span><span class="params">(Throwable t)</span> </span>&#123;</div><div class="line">           &#125;</div><div class="line">           <span class="meta">@Override</span></div><div class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onComplete</span><span class="params">()</span> </span>&#123;</div><div class="line">               Log.d(<span class="string">"rxman"</span>, <span class="string">"oncomplete"</span>);</div><div class="line">           &#125;</div><div class="line">       &#125;);</div></pre></td></tr></table></figure></p>
-<p>Observerable:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">Observable.create(<span class="keyword">new</span> ObservableOnSubscribe&lt;Integer&gt;() &#123;</div><div class="line">      <span class="meta">@Override</span></div><div class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">subscribe</span><span class="params">(ObservableEmitter&lt;Integer&gt; e)</span></span></div><div class="line"><span class="function">              <span class="keyword">throws</span> Exception</span></div><div class="line"><span class="function">      </span>&#123;</div><div class="line">            e.onNext(<span class="number">0</span>);</div><div class="line">      &#125;</div><div class="line">  &#125;).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(<span class="keyword">new</span> Observer&lt;Integer&gt;() &#123;</div><div class="line">      <span class="meta">@Override</span></div><div class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSubscribe</span><span class="params">(Disposable d)</span> </span>&#123;</div><div class="line">          Log.d(<span class="string">"rxman"</span>, <span class="string">"onSubscribe"</span>);</div><div class="line">      &#125;</div><div class="line">      <span class="meta">@Override</span></div><div class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onNext</span><span class="params">(Integer value)</span> </span>&#123;</div><div class="line">          Log.d(<span class="string">"rxman"</span>, <span class="string">"onnext"</span>+value);</div><div class="line">      &#125;</div><div class="line">      <span class="meta">@Override</span></div><div class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onError</span><span class="params">(Throwable e)</span> </span>&#123;</div><div class="line">      &#125;</div><div class="line">      <span class="meta">@Override</span></div><div class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onComplete</span><span class="params">()</span> </span>&#123;</div><div class="line">      &#125;</div><div class="line">  &#125;);</div></pre></td></tr></table></figure></p>
-<p>Flowable和Observerable 相比，不同的一个就是Ｆlowable是拉取式的，只有onSubscribe里面写了你要多少个，他才会给你发多少个s.request(1);，结合BackpressureStrategy.BUFFER,BackpressureStrategy.LATEST,BackpressureStrategy.DROP,对发送消息阶段实现了处理．</p>
-<p>但是也不是绝对的，比如这样：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">Flowable.create(<span class="keyword">new</span> FlowableOnSubscribe&lt;Integer&gt;() &#123;</div><div class="line">           <span class="meta">@Override</span></div><div class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">subscribe</span><span class="params">(FlowableEmitter&lt;Integer&gt; e)</span></span></div><div class="line"><span class="function">                   <span class="keyword">throws</span> Exception</span></div><div class="line"><span class="function">           </span>&#123;</div><div class="line">               Log.d(<span class="string">"rxman"</span>,e.requested()+<span class="string">""</span>);</div><div class="line">               e.onNext(<span class="number">0</span>);</div><div class="line">           &#125;</div><div class="line">       &#125;, BackpressureStrategy.BUFFER).subscribeOn(Schedulers.io()).</div><div class="line">                       observeOn(AndroidSchedulers.mainThread()).</div><div class="line">                       subscribe(<span class="keyword">new</span> Consumer&lt;Integer&gt;() &#123;</div><div class="line">                           <span class="meta">@Override</span></div><div class="line">                           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">accept</span><span class="params">(Integer integer)</span></span></div><div class="line"><span class="function">                                   <span class="keyword">throws</span> Exception</span></div><div class="line"><span class="function">                           </span>&#123;</div><div class="line">                               Log.d(<span class="string">"rxman"</span>,integer+<span class="string">""</span>);</div><div class="line">                           &#125;</div><div class="line">                       &#125;);</div></pre></td></tr></table></figure></p>
-<p>subscribe实现的是new Consumer(),并咩有request(),但是照样发消息，查看文档就会发现其实这个方法默认实现了request(Integer.MAX_VALUE).</p>
-<p>再变换一下呢？<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Flowable.&lt;Integer&gt;create(e-&gt; e.onNext(<span class="number">0</span>),BackpressureStrategy.BUFFER).subscribeOn(Schedulers.io())</div><div class="line">              .observeOn(AndroidSchedulers.mainThread()).subscribe(integer -&gt; Log.d(<span class="string">"rxman"</span>,integer+<span class="string">""</span>));</div></pre></td></tr></table></figure></p>
-<p>用上Lambda之后，代码更简洁，但是可读性也变差了．这是展示Ｌambda变换流程，只是方便大家取看别人的代码，万一别人这样缩进，你也明白为啥．</p>
-<p>下一篇将讲讲RxJava在项目中的运用．</p>
+        <p>搭建一个Git服务器还是比较简单的，主要是记录下踩到的坑．<br>步骤：</p>
+<p>1.远程登录服务器,ssh前面加sudo 直接登录服务器上面的root账号．</p>
+<blockquote>
+<p>sudo ssh ip</p>
+</blockquote>
+<p>2.新建一个用户,这里有个小坑，命令记乱了容易踩</p>
+<blockquote>
+<p>sudo useradd git    //新建了用户git，但是不会在/home下面建立一个文件夹git<br>sudo adduser git  //新建了用户git并在/home下面建立一个文件夹git ,选这个，切换到git用户</p>
+</blockquote>
+<p>3.到git用户文件夹下面．按上面的命令查看隐藏文件夹，是否有.ssh,如果没有</p>
+<blockquote>
+<p>$ ssh-keygen -t rsa -C “email@example.com”  //替换你的邮箱，按照提示直接确认</p>
+</blockquote>
+<p>4.之后在你的云主机用户目录下就有一个隐藏文件夹.ssh了，进入文件夹，新建文件authorized_keys</p>
+<p>5.在你本地电脑的用户的.ssh隐藏文件夹下找到id_rsa.pub，如果没有．按照第3步生成，打开id_rsa.pub复制内容到刚才服务器的authorized_keys中，保存退出.这样服务器就有了你本机的公钥了.</p>
+<p>6.进入git文件夹并新建mygit.git文件夹,更改所属用户执行,这一步很重要，让git用户拥有这个目录，否则会有权限问题</p>
+<blockquote>
+<p>sudo chown -R git:git mygit.git</p>
+</blockquote>
+<p>7.进入mygit.git文件夹执行初始化，如果还没安装git ,ubuntu使用</p>
+<blockquote>
+<p>sudo apt-get install git<br>git init　–bare</p>
+</blockquote>
+<p>关于为什么　–bare 多说一点，要不等下奇怪push成功却发现没文件.</p>
+<p>git init  和 git init –bare 的区别</p>
+<p>使用命令”git init –bare”(bare汉语意思是:裸,裸的)初始化的版本库(暂且称为bare repository)只会生成一类文件:用于记录版本库历史记录的.git目录下面的文件;而不会包含实际项目源文件的拷贝;所以该版本库不能称为工作目录(working tree);如果你进入版本目录,就会发现只有.git目录下的文件,而没有其它文件;就是说,这个版本库里面的文件都是.git目录下面的文件,把原本在.git目录里面的文件放在版本库的根目录下面;换句话说,不使用–bare选项时,就会生成.git目录以及其下的版本历史记录文件,这些版本历史记录文件就存放在.git目录下;而使用–bare选项时,不再生成.git目录,而是只生成.git目录下面的版本历史记录文件,这些版本历史记录文件也不再存放在.git目录下面,而是直接存放在版本库的根目录下面<br>用”git init”初始化的版本库用户也可以在该目录下执行所有git方面的操作。但别的用户在将更新push上来的时候容易出现冲突。<br>比如有用户在该目录（就称为远端仓库）下执行git操作，且有两个分支(master 和 b1)，当前在master分支下。另一个用户想把自己在本地仓库（就称为本地仓库）的master分支的更新提交到远端仓库的master分支，他就想当然的敲了<br>git push origin master:master<br>于是乎出现<br>因为远端仓库的用户正在master的分支上操作，而你又要把更新提交到这个master分支上，当然就出错了。<br>但如果是往远端仓库中空闲的分支上提交还是可以的，比如<br>git push origin master:b1   还是可以成功的<br>解决办法就是使用”git init –bare”方法创建一个所谓的裸仓库，之所以叫裸仓库是因为这个仓库只保存git历史提交的版本信息，而不允许用户在上面进行各种git操作，如果你硬要操作的话，只会得到下面的错误（”This operation must be run in a work tree”）<br>这个就是最好把远端仓库初始化成bare仓库的原因。</p>
+<p>8.客户端clone下来代码,执行</p>
+<blockquote>
+<p>git clone git@你的ip:/home/git/mygit.git</p>
+</blockquote>
+<p>9.注意检查格式　git@ip服务器地址，在本地新建一个test.txt文件，写入几行字.</p>
+<p>11.执行</p>
+<blockquote>
+<p>git add test.txt<br>git commit -m “the first time to commit”<br>git push origin master</p>
+</blockquote>
+<p>12.如果发生reject错误<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[remote rejected] master -&gt; master (branch is currently checked out)</div><div class="line">error: 无法推送一些引用到 <span class="string">'git@19.16.102.15:/home/git/mygit.git'</span></div></pre></td></tr></table></figure></p>
+<p>13.如果发生permission错误，执行第六步</p>
+<p>14.再次push成功，服务器上mygit.git文件夹下执行</p>
+<blockquote>
+<p>git log<br>可查看推送日志。</p>
+</blockquote>
 
       
     </div>
@@ -433,7 +464,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag"># Android</a>
+            <a href="/tags/Git/" rel="tag"># Git</a>
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
           
         </div>
       
@@ -446,18 +479,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/23/python_wsgi/" rel="next" title="理解python WSGI--来看看python如何"接口回调"">
-                <i class="fa fa-chevron-left"></i> 理解python WSGI--来看看python如何"接口回调"
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/06/03/rxjava1/" rel="prev" title="理解RxJava初探（一）">
-                理解RxJava初探（一） <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/23/python_wsgi/" rel="prev" title="理解python WSGI--来看看python如何"接口回调"">
+                理解python WSGI--来看看python如何"接口回调" <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -728,7 +757,7 @@
 		_hcwp.push({widget:"Bloggerstream", widget_id: 95964, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 95964, xid: "2017/06/03/rxjava2/"});
+		_hcwp.push({widget:"Stream", widget_id: 95964, xid: "2017/03/27/aliyungit/"});
 		
 
 		(function() {
