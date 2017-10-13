@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android," />
+  <meta name="keywords" content="Java,python," />
 
 
 
@@ -71,18 +71,18 @@
 
 
 
-<meta name="description" content="RxJava应用 如果你看完上一篇里我推荐的RxJava九篇文章，相信你已经对RxJava完全不陌生并能开始运用了．我这里再说一些RxJava要注意的点">
-<meta name="keywords" content="Android">
+<meta name="description" content="动态代理是面向切面编程（aspect oriented paragramming）的一种体现方式，想到动态（run-time）,运行的时候加上代理模式，就必然想到Java的反射机制了,实际上也确实是的:">
+<meta name="keywords" content="Java,python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="理解RxJava应用（二）">
-<meta property="og:url" content="http://yoursite.com/2017/06/03/rxjava2/index.html">
+<meta property="og:title" content="Java动态代理,静态代理和Python装饰器">
+<meta property="og:url" content="http://yoursite.com/2017/10/06/proxy201710/index.html">
 <meta property="og:site_name" content="MATRIX">
-<meta property="og:description" content="RxJava应用 如果你看完上一篇里我推荐的RxJava九篇文章，相信你已经对RxJava完全不陌生并能开始运用了．我这里再说一些RxJava要注意的点">
+<meta property="og:description" content="动态代理是面向切面编程（aspect oriented paragramming）的一种体现方式，想到动态（run-time）,运行的时候加上代理模式，就必然想到Java的反射机制了,实际上也确实是的:">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-09-30T09:21:06.244Z">
+<meta property="og:updated_time" content="2017-10-13T08:07:22.403Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="理解RxJava应用（二）">
-<meta name="twitter:description" content="RxJava应用 如果你看完上一篇里我推荐的RxJava九篇文章，相信你已经对RxJava完全不陌生并能开始运用了．我这里再说一些RxJava要注意的点">
+<meta name="twitter:title" content="Java动态代理,静态代理和Python装饰器">
+<meta name="twitter:description" content="动态代理是面向切面编程（aspect oriented paragramming）的一种体现方式，想到动态（run-time）,运行的时候加上代理模式，就必然想到Java的反射机制了,实际上也确实是的:">
 
 
 
@@ -112,13 +112,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/06/03/rxjava2/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/06/proxy201710/"/>
 
 
 
 
 
-  <title>理解RxJava应用（二） | MATRIX</title>
+  <title>Java动态代理,静态代理和Python装饰器 | MATRIX</title>
   
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/03/rxjava2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/06/proxy201710/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sam">
@@ -282,7 +282,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">理解RxJava应用（二）</h2>
+          <h2 class="post-title" itemprop="name headline">Java动态代理,静态代理和Python装饰器</h2>
         
 
         <div class="post-meta">
@@ -294,8 +294,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-03T00:00:00+08:00">
-                2017-06-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-06T00:00:00+08:00">
+                2017-10-06
               </time>
             
 
@@ -317,8 +317,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/RXJava系列/" itemprop="url" rel="index">
-                    <span itemprop="name">RXJava系列</span>
+                  <a href="/categories/设计模式/" itemprop="url" rel="index">
+                    <span itemprop="name">设计模式</span>
                   </a>
                 </span>
 
@@ -336,8 +336,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/06/03/rxjava2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2017/06/03/rxjava2/" itemprop="commentsCount"></span>
+                <a href="/2017/10/06/proxy201710/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/10/06/proxy201710/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -346,7 +346,7 @@
 
           
           
-             <span id="/2017/06/03/rxjava2/" class="leancloud_visitors" data-flag-title="理解RxJava应用（二）">
+             <span id="/2017/10/06/proxy201710/" class="leancloud_visitors" data-flag-title="Java动态代理,静态代理和Python装饰器">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -377,16 +377,32 @@
       
 
       
-        <p><strong><em>RxJava应用</em></strong></p>
-<p>如果你看完上一篇里我推荐的RxJava九篇文章，相信你已经对RxJava完全不陌生并能开始运用了．我这里再说一些RxJava要注意的点<br><a id="more"></a><br>１．RxJava2.0中Observerable和Flowable的区别，先上代码：</p>
-<p>Flowable:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">Flowable.create(<span class="keyword">new</span> FlowableOnSubscribe&lt;Integer&gt;() &#123;</div><div class="line">   <span class="meta">@Override</span></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">subscribe</span><span class="params">(FlowableEmitter&lt;Integer&gt; e)</span></span></div><div class="line"><span class="function">           <span class="keyword">throws</span> Exception</span></div><div class="line"><span class="function">   </span>&#123;</div><div class="line">       Log.d(<span class="string">"rxman"</span>,e.requested()+<span class="string">""</span>);</div><div class="line">       e.onNext(<span class="number">0</span>);</div><div class="line">   &#125;</div><div class="line">&#125;, BackpressureStrategy.BUFFER).subscribeOn(Schedulers.io()).</div><div class="line">               observeOn(AndroidSchedulers.mainThread()).</div><div class="line">       subscribe(<span class="keyword">new</span> Subscriber&lt;Integer&gt;() &#123;</div><div class="line">           <span class="meta">@Override</span></div><div class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSubscribe</span><span class="params">(Subscription s)</span> </span>&#123;</div><div class="line">               Log.d(<span class="string">"rxman"</span>, <span class="string">"onSubscribe"</span>);</div><div class="line">               s.request(<span class="number">1</span>);</div><div class="line">           &#125;</div><div class="line">           <span class="meta">@Override</span></div><div class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onNext</span><span class="params">(Integer integer)</span> </span>&#123;</div><div class="line">               Log.d(<span class="string">"rxman"</span>, <span class="string">"onnext"</span>+integer);</div><div class="line">           &#125;</div><div class="line">           <span class="meta">@Override</span></div><div class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onError</span><span class="params">(Throwable t)</span> </span>&#123;</div><div class="line">           &#125;</div><div class="line">           <span class="meta">@Override</span></div><div class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onComplete</span><span class="params">()</span> </span>&#123;</div><div class="line">               Log.d(<span class="string">"rxman"</span>, <span class="string">"oncomplete"</span>);</div><div class="line">           &#125;</div><div class="line">       &#125;);</div></pre></td></tr></table></figure></p>
-<p>Observerable:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">Observable.create(<span class="keyword">new</span> ObservableOnSubscribe&lt;Integer&gt;() &#123;</div><div class="line">      <span class="meta">@Override</span></div><div class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">subscribe</span><span class="params">(ObservableEmitter&lt;Integer&gt; e)</span></span></div><div class="line"><span class="function">              <span class="keyword">throws</span> Exception</span></div><div class="line"><span class="function">      </span>&#123;</div><div class="line">            e.onNext(<span class="number">0</span>);</div><div class="line">      &#125;</div><div class="line">  &#125;).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(<span class="keyword">new</span> Observer&lt;Integer&gt;() &#123;</div><div class="line">      <span class="meta">@Override</span></div><div class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSubscribe</span><span class="params">(Disposable d)</span> </span>&#123;</div><div class="line">          Log.d(<span class="string">"rxman"</span>, <span class="string">"onSubscribe"</span>);</div><div class="line">      &#125;</div><div class="line">      <span class="meta">@Override</span></div><div class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onNext</span><span class="params">(Integer value)</span> </span>&#123;</div><div class="line">          Log.d(<span class="string">"rxman"</span>, <span class="string">"onnext"</span>+value);</div><div class="line">      &#125;</div><div class="line">      <span class="meta">@Override</span></div><div class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onError</span><span class="params">(Throwable e)</span> </span>&#123;</div><div class="line">      &#125;</div><div class="line">      <span class="meta">@Override</span></div><div class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onComplete</span><span class="params">()</span> </span>&#123;</div><div class="line">      &#125;</div><div class="line">  &#125;);</div></pre></td></tr></table></figure></p>
-<p>Flowable和Observerable 相比，不同的一个就是Ｆlowable是拉取式的，只有onSubscribe里面写了你要多少个，他才会给你发多少个s.request(1);，结合BackpressureStrategy.BUFFER,BackpressureStrategy.LATEST,BackpressureStrategy.DROP,对发送消息阶段实现了处理．</p>
-<p>但是也不是绝对的，比如这样：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">Flowable.create(<span class="keyword">new</span> FlowableOnSubscribe&lt;Integer&gt;() &#123;</div><div class="line">           <span class="meta">@Override</span></div><div class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">subscribe</span><span class="params">(FlowableEmitter&lt;Integer&gt; e)</span></span></div><div class="line"><span class="function">                   <span class="keyword">throws</span> Exception</span></div><div class="line"><span class="function">           </span>&#123;</div><div class="line">               Log.d(<span class="string">"rxman"</span>,e.requested()+<span class="string">""</span>);</div><div class="line">               e.onNext(<span class="number">0</span>);</div><div class="line">           &#125;</div><div class="line">       &#125;, BackpressureStrategy.BUFFER).subscribeOn(Schedulers.io()).</div><div class="line">                       observeOn(AndroidSchedulers.mainThread()).</div><div class="line">                       subscribe(<span class="keyword">new</span> Consumer&lt;Integer&gt;() &#123;</div><div class="line">                           <span class="meta">@Override</span></div><div class="line">                           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">accept</span><span class="params">(Integer integer)</span></span></div><div class="line"><span class="function">                                   <span class="keyword">throws</span> Exception</span></div><div class="line"><span class="function">                           </span>&#123;</div><div class="line">                               Log.d(<span class="string">"rxman"</span>,integer+<span class="string">""</span>);</div><div class="line">                           &#125;</div><div class="line">                       &#125;);</div></pre></td></tr></table></figure></p>
-<p>subscribe实现的是new Consumer(),并咩有request(),但是照样发消息，查看文档就会发现其实这个方法默认实现了request(Integer.MAX_VALUE).</p>
-<p>再变换一下呢？<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Flowable.&lt;Integer&gt;create(e-&gt; e.onNext(<span class="number">0</span>),BackpressureStrategy.BUFFER).subscribeOn(Schedulers.io())</div><div class="line">              .observeOn(AndroidSchedulers.mainThread()).subscribe(integer -&gt; Log.d(<span class="string">"rxman"</span>,integer+<span class="string">""</span>));</div></pre></td></tr></table></figure></p>
-<p>用上Lambda之后，代码更简洁，但是可读性也变差了．这是展示Ｌambda变换流程，只是方便大家取看别人的代码，万一别人这样缩进，你也明白为啥．</p>
-<p>下一篇将讲讲RxJava在项目中的运用．</p>
+        <p>动态代理是面向切面编程（aspect oriented paragramming）的一种体现方式，想到动态（run-time）,运行的时候加上代理模式，就必然想到Java的反射机制了,实际上也确实是的:<br><a id="more"></a></p>
+<blockquote>
+<p>通过实现 InvocationHandler 接口创建自己的调用处理器；</p>
+<p>通过为 Proxy 类指定 ClassLoader 对象和一组 interface 来创建动态代理类；</p>
+<p>通过反射机制获得动态代理类的构造函数，其唯一参数类型是调用处理器接口类型；</p>
+<p>通过构造函数创建动态代理类实例，构造时调用处理器对象作为参数被传入。</p>
+</blockquote>
+<p>先看看一个简单的实现：<br>1.定义一个获取信息接口<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">GetInfoInterface</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">getInfo</span><span class="params">()</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>2.实现这个接口<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GetInfo</span> <span class="keyword">implements</span> <span class="title">GetInfoInterface</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getInfo</span><span class="params">()</span> </span>&#123;</div><div class="line">		System.out.println(<span class="string">"获取数据接口"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>3.实现一个动态代理handler<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RunHandler</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">private</span> Object proxyInner;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">RunHandler</span><span class="params">(Object proxy)</span></span>&#123;</div><div class="line">		<span class="keyword">this</span>.proxyInner=proxy;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;</div><div class="line">		<span class="comment">// TODO Auto-generated method stub</span></div><div class="line">		System.out.println(<span class="string">"开始获取信息"</span>);</div><div class="line">		<span class="comment">//此处不能用方法中的proxy，要用proxyInner,否则会死循环</span></div><div class="line">		Object result=method.invoke(proxyInner, args);</div><div class="line">		System.out.println(<span class="string">"调完了"</span>);</div><div class="line">		<span class="keyword">return</span> result;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>4.写一个实现类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloReflect</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</div><div class="line">		GetInfo info=<span class="keyword">new</span> GetInfo();</div><div class="line">		GetInfoInterface proxy=(GetInfoInterface)Proxy.newProxyInstance(GetInfoInterface.class.getClassLoader(), <span class="keyword">new</span> Class[]&#123;GetInfoInterface.class&#125;, <span class="keyword">new</span> RunHandler(info));</div><div class="line">		proxy.getInfo();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>运行的结果：</p>
+<blockquote>
+<p>开始获取信息</p>
+<p>获取数据接口</p>
+<p>调完了</p>
+</blockquote>
+<p>回头看看，我们在调用获取数据接口的时候，添加了两个提示，动态代理相当于对原有的接口进行了一次拓展，而我不需要知道以前接口的实现细节，当然我也没有改变他的源代码，而实现了我想要的功能拓展.</p>
+<p>在Retrofit的代码中也有一段动态代理，这个设计也保证了Retrofit的可扩展性<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> &lt;T&gt; <span class="function">T <span class="title">create</span><span class="params">(<span class="keyword">final</span> Class&lt;T&gt; service)</span> </span>&#123;</div><div class="line">  Utils.validateServiceInterface(service);</div><div class="line">  <span class="keyword">if</span> (validateEagerly) &#123;</div><div class="line">    eagerlyValidateMethods(service);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> (T) Proxy.newProxyInstance(service.getClassLoader(), <span class="keyword">new</span> Class&lt;?&gt;[] &#123; service &#125;,</div><div class="line">      <span class="keyword">new</span> InvocationHandler() &#123;</div><div class="line">        <span class="keyword">private</span> <span class="keyword">final</span> Platform platform = Platform.get();</div><div class="line"></div><div class="line">        <span class="meta">@Override</span> <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, @Nullable Object[] args)</span></span></div><div class="line"><span class="function">            <span class="keyword">throws</span> Throwable </span>&#123;</div><div class="line">          <span class="comment">// If the method is a method from Object then defer to normal invocation.</span></div><div class="line">          <span class="keyword">if</span> (method.getDeclaringClass() == Object.class) &#123;</div><div class="line">            <span class="keyword">return</span> method.invoke(<span class="keyword">this</span>, args);</div><div class="line">          &#125;</div><div class="line">          <span class="keyword">if</span> (platform.isDefaultMethod(method)) &#123;</div><div class="line">            <span class="keyword">return</span> platform.invokeDefaultMethod(method, service, proxy, args);</div><div class="line">          &#125;</div><div class="line">          ServiceMethod&lt;Object, Object&gt; serviceMethod =</div><div class="line">              (ServiceMethod&lt;Object, Object&gt;) loadServiceMethod(method);</div><div class="line">          OkHttpCall&lt;Object&gt; okHttpCall = <span class="keyword">new</span> OkHttpCall&lt;&gt;(serviceMethod, args);</div><div class="line">          <span class="keyword">return</span> serviceMethod.callAdapter.adapt(okHttpCall);</div><div class="line">        &#125;</div><div class="line">      &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>目前Retrofit使用的是HttpCall执行的http请求数据，未来想扩展的话直接在动态代理里面修改就可以了.</p>
+<p>静态代理是什么呢？相对于动态代理的运行期，那么静态代理就是编译期代理了,看看AIDL的一段实现代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> com.gprinter.aidl.<span class="function">GpService <span class="title">asInterface</span><span class="params">(android.os.IBinder obj)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">if</span> ((obj==<span class="keyword">null</span>)) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line">    android.os.IInterface iin = obj.queryLocalInterface(DESCRIPTOR);</div><div class="line">    <span class="keyword">if</span> (((iin!=<span class="keyword">null</span>)&amp;&amp;(iin <span class="keyword">instanceof</span> com.gprinter.aidl.GpService))) &#123;</div><div class="line">        <span class="keyword">return</span> ((com.gprinter.aidl.GpService)iin);</div><div class="line">      &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> com.gprinter.aidl.GpService.Stub.Proxy(obj);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面是aidl的静态代理转换部分，如果是不同进程，就用一个代理类去处理，具体的实现可以看看AIDL相关代码.</p>
+<p>动态代理可以不需要自己代码实现细节去进行补充，而静态代理需要重写相关逻辑，这也是面向切面编程的一个形象例子.</p>
+<p>来看看python的装饰器：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">decor</span><span class="params">(func)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args,**kwargs)</span>:</span></div><div class="line">        print(<span class="string">"开始获取数据"</span>)</div><div class="line">        k=func(*args)</div><div class="line">        print(<span class="string">"获取完了"</span>)</div><div class="line">        <span class="keyword">return</span> k</div><div class="line">    <span class="keyword">return</span> wrapper</div><div class="line"></div><div class="line"><span class="meta">@decor</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">getInfo</span><span class="params">()</span>:</span></div><div class="line">    print(<span class="string">"拿到了数据了"</span>)</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    getInfo()</div></pre></td></tr></table></figure></p>
+<p>在python中，想要不更改源代码加上自己的功能，用这几行代码就够了，实在太挂了.</p>
 
       
     </div>
@@ -433,7 +449,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag"># Android</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/python/" rel="tag"># python</a>
           
         </div>
       
@@ -446,8 +464,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/23/python_wsgi/" rel="next" title="理解python WSGI--来看看python如何"接口回调"">
-                <i class="fa fa-chevron-left"></i> 理解python WSGI--来看看python如何"接口回调"
+              <a href="/2017/09/16/mysql20179/" rel="next" title="mysql学习篇--记录一些命令">
+                <i class="fa fa-chevron-left"></i> mysql学习篇--记录一些命令
               </a>
             
           </div>
@@ -455,10 +473,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/03/rxjava1/" rel="prev" title="理解RxJava初探（一）">
-                理解RxJava初探（一） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -728,7 +742,7 @@
 		_hcwp.push({widget:"Bloggerstream", widget_id: 95964, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 95964, xid: "2017/06/03/rxjava2/"});
+		_hcwp.push({widget:"Stream", widget_id: 95964, xid: "2017/10/06/proxy201710/"});
 		
 
 		(function() {
