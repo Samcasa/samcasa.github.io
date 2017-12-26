@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Android," />
 
 
 
@@ -71,13 +71,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="MATRIX">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta name="description" content="刷脸考勤的一个需求：">
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RxJava在项目中的应用之timeout的使用">
+<meta property="og:url" content="http://yoursite.com/2017/12/26/rxjava之timeout/index.html">
 <meta property="og:site_name" content="MATRIX">
+<meta property="og:description" content="刷脸考勤的一个需求：">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-12-26T10:48:36.865Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MATRIX">
+<meta name="twitter:title" content="RxJava在项目中的应用之timeout的使用">
+<meta name="twitter:description" content="刷脸考勤的一个需求：">
 
 
 
@@ -107,13 +112,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/page/2/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/26/rxjava之timeout/"/>
 
 
 
 
 
-  <title>MATRIX</title>
+  <title>RxJava在项目中的应用之timeout的使用 | MATRIX</title>
   
 
 
@@ -142,8 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -246,9 +250,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -261,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/03/rxjava1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/26/rxjava之timeout/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sam">
@@ -278,9 +282,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/03/rxjava1/" itemprop="url">理解RxJava初探（一）</a></h2>
+          <h2 class="post-title" itemprop="name headline">RxJava在项目中的应用之timeout的使用</h2>
         
 
         <div class="post-meta">
@@ -292,8 +294,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-03T00:00:00+08:00">
-                2017-06-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-26T00:00:00+08:00">
+                2017-12-26
               </time>
             
 
@@ -334,8 +336,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/06/03/rxjava1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2017/06/03/rxjava1/" itemprop="commentsCount"></span>
+                <a href="/2017/12/26/rxjava之timeout/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/12/26/rxjava之timeout/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -344,7 +346,7 @@
 
           
           
-             <span id="/2017/06/03/rxjava1/" class="leancloud_visitors" data-flag-title="理解RxJava初探（一）">
+             <span id="/2017/12/26/rxjava之timeout/" class="leancloud_visitors" data-flag-title="RxJava在项目中的应用之timeout的使用">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -375,18 +377,26 @@
       
 
       
-        
-          <p><strong><em>ＲxJava引入</em></strong></p>
-<p>为啥要RxJava？</p>
-<p>提高代码的阅读性，减少切换线程数据通信的代码冗余并提高可控性．<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/03/rxjava1/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <p>刷脸考勤的一个需求：<br><a id="more"></a><br>具体需求如下：</p>
+<ol>
+<li>选择刷脸，收到人脸比对成功数据后，弹框显示姓名工号信息并显示刷脸提示icon，3秒钟消失。</li>
+<li>选择刷卡，收到刷卡数据后，弹框显示姓名工号信息并显示刷卡提示icon，3秒钟消失。</li>
+<li>刷脸的时候刷卡，显示刷卡icon刷脸icon 姓名工号信息,3秒后消失。</li>
+<li>连续刷脸（3秒内）的时候直接显示姓名工号icon信息。最后一次刷3秒后消失 </li>
+</ol>
+<p>这是同事的代码任务，因为他度假顺着元旦假期就中途转给我，我一看，一堆handler代码，而且还没理清逻辑。<br>RxJava多好，整啥handler啊。rxjava timeout操作符可以百度下，就不赘述了。</p>
+<p><strong>RxJava大法好</strong></p>
+<ol>
+<li><p>分析数据的源点，我的数据来源有两个：1.人脸比对成功后的socket数据。2.刷卡的http请求数据<br>体现java封装的话，当然是什么数据都塞进去，你自己去处理。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//刷卡</span></div><div class="line"><span class="keyword">if</span> (member != <span class="keyword">null</span>) &#123;</div><div class="line">         LogUtil.print(TYPE.E, <span class="string">"card member  "</span> + member.toString());</div><div class="line">         member.setType(<span class="number">0</span>);</div><div class="line">         staffComponent.add(member);</div><div class="line"><span class="comment">//刷脸</span></div><div class="line"><span class="comment">//这里也用到了rxjava,socket比对时有渣数据，数据源头用throttleFirst筛选了一次，可以看rxjava系列</span></div><div class="line"> NetManager.getInstance().getFlowable().subscribeOn(AndroidSchedulers.mainThread()).observeOn(</div><div class="line">            AndroidSchedulers.mainThread()).subscribe(<span class="keyword">new</span> Consumer&lt;Member&gt;() &#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">accept</span><span class="params">(Member member)</span></span></div><div class="line"><span class="function">                <span class="keyword">throws</span> Exception</span></div><div class="line"><span class="function">        </span>&#123;</div><div class="line">            staffComponent.add(member);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>这个staffComponent add 就得去干些脏活累活了。</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">final</span> Member member)</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="comment">//不管是啥先添加到一个集合中</span></div><div class="line">	list.add(member);</div><div class="line"></div><div class="line">	<span class="keyword">if</span>(mDisposable!=<span class="keyword">null</span>)&#123;</div><div class="line">		<span class="comment">//这时候还未超时，直接发送消息</span></div><div class="line">		 mEmitter.onNext(member);</div><div class="line">	&#125;<span class="keyword">else</span> &#123;</div><div class="line">                       <span class="comment">//由于是一个timeout方法，不能像之前的先写好，而是你什么时候来数据了就创建。</span></div><div class="line">		mDisposable = Observable.create(<span class="keyword">new</span> ObservableOnSubscribe&lt;Member&gt;() &#123;</div><div class="line">			<span class="meta">@Override</span></div><div class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">subscribe</span><span class="params">(@NonNull ObservableEmitter&lt;Member&gt; e)</span></span></div><div class="line"><span class="function">					<span class="keyword">throws</span> Exception</span></div><div class="line"><span class="function">			</span>&#123;</div><div class="line">					NewStaffComponent.<span class="keyword">this</span>.mEmitter=e;</div><div class="line">					e.onNext(member);</div><div class="line">			&#125;</div><div class="line">		&#125;)                                               <span class="comment">//超时3秒发送消息</span></div><div class="line">								.timeout(<span class="number">3</span>, TimeUnit.SECONDS)</div><div class="line">								.subscribeOn(AndroidSchedulers.mainThread())</div><div class="line">								.observeOn(AndroidSchedulers.mainThread())</div><div class="line">								.subscribe(<span class="keyword">new</span> Consumer&lt;Member&gt;() &#123;</div><div class="line">									<span class="meta">@Override</span></div><div class="line">									<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">accept</span><span class="params">(Member member)</span></span></div><div class="line"><span class="function">											<span class="keyword">throws</span> Exception</span></div><div class="line"><span class="function">									</span>&#123;</div><div class="line">										<span class="keyword">if</span>(list.size()&gt;<span class="number">1</span>&amp;&amp;(list.get(list.size()-<span class="number">1</span>).getName().equals(list.get(list.size()-<span class="number">2</span>).getName())))&#123;</div><div class="line">											<span class="comment">//表示既刷脸又刷卡，只需要提示</span></div><div class="line">											mOnShowListener.onShowListener(<span class="number">2</span>);</div><div class="line">										&#125;<span class="keyword">else</span> &#123;</div><div class="line">											<span class="keyword">if</span> (mOnShowListener != <span class="keyword">null</span>) &#123;</div><div class="line">												<span class="keyword">if</span> (member.getType() == <span class="number">0</span>) &#123;</div><div class="line">													mOnShowListener.onShowListener(<span class="number">0</span>);</div><div class="line">												&#125; <span class="keyword">else</span> &#123;</div><div class="line">													mOnShowListener.onShowListener(<span class="number">1</span>);</div><div class="line">												&#125;</div><div class="line">											&#125;</div><div class="line">											<span class="comment">//显示动画</span></div><div class="line">											<span class="keyword">if</span> (relativeLayout.getChildCount() == <span class="number">0</span>) &#123;</div><div class="line">												mView = getView(member);</div><div class="line">												viewZoomInAnim(mView);</div><div class="line">												relativeLayout.addView(mView);</div><div class="line">											&#125; <span class="keyword">else</span> &#123;</div><div class="line">												relativeLayout.removeAllViews();</div><div class="line">												View view = getView(member);</div><div class="line">												ObjectAnimator moveIn = ObjectAnimator.ofFloat(view, <span class="string">"translationY"</span>, -<span class="number">40.0f</span>);</div><div class="line">												moveIn.setDuration(<span class="number">10</span>);</div><div class="line">												moveIn.start();</div><div class="line">												relativeLayout.addView(view);</div><div class="line">											&#125;</div><div class="line">										&#125;</div><div class="line">									&#125;</div><div class="line">								&#125;, <span class="keyword">new</span> Consumer&lt;Throwable&gt;() &#123;</div><div class="line">									<span class="meta">@Override</span></div><div class="line">									<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">accept</span><span class="params">(Throwable throwable)</span></span></div><div class="line"><span class="function">											<span class="keyword">throws</span> Exception</span></div><div class="line"><span class="function">									</span>&#123;</div><div class="line">										<span class="comment">//消失动画。</span></div><div class="line">										list.clear();</div><div class="line">										relativeLayout.removeAllViews();</div><div class="line">										<span class="keyword">if</span> (listener != <span class="keyword">null</span>) listener.onDismiss();</div><div class="line">										<span class="comment">//这个观察者就可以丢弃了，下次刷脸数据再新建一个。	</span></div><div class="line">										mDisposable=<span class="keyword">null</span>;</div><div class="line">									&#125;</div><div class="line">								&#125;);</div><div class="line"></div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<p>注释掉同事的几百行handler代码后，用rxjava几十行解决问题。</p>
+<p>预告：近期会有paho mqtt for android 源码分析，不忙的时候就写写。</p>
+
       
     </div>
     
@@ -396,357 +406,70 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Encourage me keep in share</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://github.com/Samcasa/samcasa.github.io/blob/master/images/weixin.jpg?raw=true" alt="sam WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://github.com/Samcasa/samcasa.github.io/blob/master/images/zhifubao.jpg?raw=true" alt="sam Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/23/python_wsgi/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="sam">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MATRIX">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/23/python_wsgi/" itemprop="url">理解python WSGI--来看看python如何"接口回调"</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-23T00:00:00+08:00">
-                2017-05-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python初探/" itemprop="url" rel="index">
-                    <span itemprop="name">python初探</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/Android/" rel="tag"># Android</a>
           
-
-          
-            
-            <!--noindex-->
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/05/23/python_wsgi/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2017/05/23/python_wsgi/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-              <!--/noindex-->
-            
-          
-
-          
-          
-             <span id="/2017/05/23/python_wsgi/" class="leancloud_visitors" data-flag-title="理解python WSGI--来看看python如何"接口回调"">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p>接口回调时java的一种说法，python是没有接口回调这个概念的，但是却可以巧妙的实现，而且实现的比java更省代码，先来说说Java的接口回调是怎么回事吧．<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/05/23/python_wsgi/#more" rel="contents">
-              Read more &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/12/mqtt一个bug/" rel="next" title="MQTT系列（二）--  MQTT频繁断线重连">
+                <i class="fa fa-chevron-left"></i> MQTT系列（二）--  MQTT频繁断线重连
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/27/aliyungit/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="sam">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MATRIX">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/27/aliyungit/" itemprop="url">阿里云上搭建git服务器</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-27T00:00:00+08:00">
-                2017-03-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index">
-                    <span itemprop="name">Git</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            <!--noindex-->
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/03/27/aliyungit/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2017/03/27/aliyungit/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-              <!--/noindex-->
-            
-          
-
-          
-          
-             <span id="/2017/03/27/aliyungit/" class="leancloud_visitors" data-flag-title="阿里云上搭建git服务器">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>搭建一个Git服务器还是比较简单的，主要是记录下踩到的坑．<br>步骤：<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/27/aliyungit/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -756,14 +479,11 @@
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -771,6 +491,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
 
         </div>
         
@@ -1002,6 +728,8 @@
 
 		_hcwp.push({widget:"Bloggerstream", widget_id: 95964, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
+		
+		_hcwp.push({widget:"Stream", widget_id: 95964, xid: "2017/12/26/rxjava之timeout/"});
 		
 
 		(function() {
