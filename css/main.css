@@ -1822,7 +1822,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d56a32;
+  background: #ffff93;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2905,7 +2905,7 @@ hr {
   }
 }
 body {
-  background: url("/images/wugongshan.jpg");
+  background: url("https://raw.githubusercontent.com/Samcasa/samcasa.github.io/master/images/wugongshan.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
